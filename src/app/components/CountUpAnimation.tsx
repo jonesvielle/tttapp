@@ -20,10 +20,10 @@ const CountUp: React.FC<CountUpProps> = ({
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          observer.disconnect(); // Stop observing after it becomes visible
+          observer.disconnect();
         }
       },
-      { threshold: 0.1 } // Trigger when 10% of the element is visible
+      { threshold: 0.1 }
     );
 
     if (ref.current) {
@@ -39,20 +39,20 @@ const CountUp: React.FC<CountUpProps> = ({
 
   useEffect(() => {
     if (isVisible) {
-      const start = performance.now(); // Start time
-      const end = start + duration; // End time
-      const increment = Math.ceil(target / (duration / 100)); // Calculate increment
+      const start = performance.now();
+      const end = start + duration;
+      const increment = Math.ceil(target / (duration / 100));
 
       const countInterval = (currentTime: number) => {
         if (currentTime < end) {
-          setCount((prevCount) => Math.min(prevCount + increment, target)); // Increment count
-          requestAnimationFrame(countInterval); // Call next frame
+          setCount((prevCount) => Math.min(prevCount + increment, target));
+          requestAnimationFrame(countInterval);
         } else {
-          setCount(target); // Ensure we reach the target
+          setCount(target);
         }
       };
 
-      requestAnimationFrame(countInterval); // Start the counting
+      requestAnimationFrame(countInterval);
     }
   }, [isVisible, target, duration]);
 

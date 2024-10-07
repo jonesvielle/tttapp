@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 
 interface BounceInComponentProps {
   children: React.ReactNode;
-  className?: string; // Optional className for additional styling
+  className?: string;
 }
 
 const BounceInComponent: React.FC<BounceInComponentProps> = ({
@@ -17,10 +17,10 @@ const BounceInComponent: React.FC<BounceInComponentProps> = ({
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          observer.disconnect(); // Stop observing once the element is visible
+          observer.disconnect();
         }
       },
-      { threshold: 0.1 } // Trigger when 10% of the element is visible
+      { threshold: 0.1 }
     );
 
     if (ref.current) {
@@ -38,8 +38,8 @@ const BounceInComponent: React.FC<BounceInComponentProps> = ({
     <div
       ref={ref}
       className={`transition-opacity duration-500 ${
-        isVisible ? "animate-bounceIn" : "opacity-0" // Initially hidden
-      } ${className}`} // Include any additional classes
+        isVisible ? "animate-bounceIn" : "opacity-0"
+      } ${className}`}
     >
       {children}
     </div>

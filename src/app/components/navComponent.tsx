@@ -6,7 +6,7 @@ import BounceInComponent from "./BounceInComponent";
 interface NavComponentProps {}
 
 const NavComponent = (props: NavComponentProps) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // State to manage mobile menu visibility
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
@@ -19,9 +19,7 @@ const NavComponent = (props: NavComponentProps) => {
         <div className="text-4xl font-bold">Boldo</div>
       </div>
 
-      {/* Button for mobile menu */}
       <button className="md:hidden focus:outline-none" onClick={toggleMenu}>
-        {/* Icon for the menu toggle */}
         {isMenuOpen ? (
           <svg
             className="w-6 h-6"
@@ -72,7 +70,7 @@ const NavComponent = (props: NavComponentProps) => {
             <div
               className="py-5 px-10 font-bold cursor-pointer border-b border-gray-200"
               key={i}
-              onClick={toggleMenu} // Close the menu when an item is clicked
+              onClick={toggleMenu}
             >
               {c}
             </div>
