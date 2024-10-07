@@ -17,10 +17,10 @@ export default function Home() {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          observer1.disconnect(); // Stop observing once the element is visible
+          observer1.disconnect();
         }
       },
-      { threshold: 0.1 } // Adjust this threshold to control when the animation triggers
+      { threshold: 0.1 }
     );
 
     if (ref1.current) {
