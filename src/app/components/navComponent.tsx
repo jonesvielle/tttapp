@@ -1,11 +1,8 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import { navItems } from "../helper/constants";
-import BounceInComponent from "./BounceInComponent";
 
-interface NavComponentProps {}
-
-const NavComponent = (props: NavComponentProps) => {
+const NavComponent = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {

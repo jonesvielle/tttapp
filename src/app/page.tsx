@@ -2,7 +2,7 @@
 import Image from "next/image";
 import NavComponent from "./components/navComponent";
 import Head from "next/head";
-import { landings, navItems, resources } from "./helper/constants";
+import { landings, resources } from "./helper/constants";
 import { useEffect, useRef, useState } from "react";
 import BounceInComponent from "./components/BounceInComponent";
 import SlideUpComponent from "./components/SlideUpComponent";
